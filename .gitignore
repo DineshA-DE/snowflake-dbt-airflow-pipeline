@@ -1,0 +1,20 @@
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+profiles.yml
+
+# Airflow
+airflow/logs/
+airflow/.env
+
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# Secrets
+*.json
+*.key
