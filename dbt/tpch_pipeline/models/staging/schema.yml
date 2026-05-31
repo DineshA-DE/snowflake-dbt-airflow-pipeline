@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Cleaned orders data from raw source"
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customers"
+        tests:
+          - not_null
+      - name: status_code
+        description: "Current status of the order"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['O', 'F', 'P']
+      - name: order_date
+        description: "Date when order was placed"
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: "Cleaned customers data from raw source"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "Full name of the customer"
+        tests:
+          - not_null
+      - name: nation_id
+        description: "Foreign key to nations table"
+        tests:
+          - not_null
+
+  - name: stg_lineitems
+    description: "Cleaned line items data from raw source"
+    columns:
+      - name: order_id
+        description: "Foreign key to orders"
+        tests:
+          - not_null
+      - name: line_number
+        description: "Line number within the order"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Quantity of items ordered"
+        tests:
+          - not_null
+
+  - name: stg_nations
+    description: "Cleaned nations reference data"
+    columns:
+      - name: nation_id
+        description: "Unique identifier for each nation"
+        tests:
+          - unique
+          - not_null
+      - name: nation_name
+        description: "Name of the nation"
+        tests:
+          - unique
+          - not_null
