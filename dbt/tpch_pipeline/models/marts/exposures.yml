@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+  - name: sales_dashboard
+    type: dashboard
+    maturity: high
+    url: https://mycompany.looker.com/dashboards/sales
+    description: >
+      Sales dashboard showing order trends, customer revenue,
+      and customer segmentation for the business team.
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('fct_customer_revenue')
+      - ref('dim_customers')
+
+    owner:
+      name: Dinesh A
+      email: dinesh@company.com
