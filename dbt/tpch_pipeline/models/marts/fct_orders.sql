@@ -1,7 +1,10 @@
 {{
     config(
         materialized='incremental',
-        unique_key='order_key'
+        unique_key='order_key',
+         post_hook=[
+            "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
+        ]
     )
 }}
 
