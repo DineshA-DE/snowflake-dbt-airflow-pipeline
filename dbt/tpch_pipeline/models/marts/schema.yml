@@ -4,6 +4,11 @@ models:
   - name: fct_orders
     description: "One row per order with aggregated metrics"
     columns:
+      - name: order_key
+        description: "Surrogate key generated from order_id and ship_mode"
+        tests:
+          - unique
+          - not_null
       - name: order_id
         description: "Unique identifier for each order"
         tests:
