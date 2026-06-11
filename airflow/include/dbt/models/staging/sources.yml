@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: tpch
+    database: AIRBNB_PROJECT
+    schema: RAW
+    tables:
+      - name: RAW_ORDERS
+      - name: RAW_CUSTOMERS
+      - name: RAW_LINEITEM
+      - name: RAW_NATION
