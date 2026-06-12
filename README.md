@@ -49,13 +49,13 @@ TPC-H benchmark dataset (~6M rows) containing orders, customers, lineitems and n
 
 ## dbt Lineage Graph
 
-![dbt Lineage Graph](assets/dbt_lineage.png)
+![dbt Lineage Graph](assets/dbt_lineage.png.png)
 
 ## Airflow DAG
 
 Orchestrated using Astronomer Cosmos — automatically generates one Airflow task per dbt model with correct dependency ordering.
 
-![Airflow DAG](assets/airflow_dag.png)
+![Airflow DAG](assets/airflow_dag.png.png)
 
 ## How to Run
 
